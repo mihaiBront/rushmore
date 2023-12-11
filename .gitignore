@@ -1,3 +1,6 @@
+#intellij
+.*/
+.*
 # Gradle files
 .gradle/
 build/
