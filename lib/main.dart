@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'model/containers.dart';
-import 'model/commonComponents.dart';
+import 'model/common_components.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.black,
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
@@ -99,26 +100,26 @@ class _MyHomePageState extends State<MyHomePage> {
             // wireframe for each widget.
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              GameContainer("World At War", "", Colors.blueGrey,
-                  pathIcon:'games/waw_ico').draw(),
-              GameContainer("Black Ops I", "", Colors.teal,
-                pathIcon: "games/bo1_ico",).draw(),
-              GameContainer("Black Ops II", "", Colors.black,
-                pathIcon: "games/bo2_ico",).draw(),
-              GameContainer("Black Ops III", "", Colors.deepOrange,
-                pathIcon: "games/bo3_ico",).draw(),
-              GameContainer("Black Ops IV", "", Colors.deepOrangeAccent,
-                pathIcon: "games/bo4_ico",).draw(),
-              GameContainer("Cold War", "", Colors.white70,
-                pathIcon: "games/cw_ico",).draw(),
-              GameContainer("Advanced Warfare", "", Colors.yellow,
-                pathIcon: "games/aw_ico",).draw(),
-              GameContainer("Infinite Warfare", "", Colors.lightGreenAccent,
-                pathIcon: "games/iw_ico",).draw(),
-              GameContainer("World War 2", "", Colors.brown,
-                pathIcon: "games/ww2_ico",).draw(),
-              GameContainer("Vanguard", "", Colors.purple,
-                pathIcon: "games/vg_ico",).draw(),
+              GameContainer("World At War", const Color.fromRGBO(
+                  4, 45, 58, 1), pathIcon:'games/waw').draw(),
+              GameContainer("Black Ops I", const Color.fromRGBO(
+                  84, 61, 0, 1), pathIcon: "games/bo1",).draw(),
+              GameContainer("Black Ops II", const Color.fromRGBO(
+                  47, 47, 47, 1.0), pathIcon: "games/bo2",).draw(),
+              GameContainer("Black Ops III", const Color.fromRGBO(
+                  110, 42, 12, 1.0), pathIcon: "games/bo3").draw(),
+              GameContainer("Black Ops IV", const Color.fromRGBO(
+                  110, 42, 12, 1.0), pathIcon: "games/bo4",).draw(),
+              GameContainer("Cold War", const Color.fromRGBO(
+                  96, 96, 96, 1), pathIcon: "games/cw",).draw(),
+              GameContainer("Advanced Warfare", Colors.yellow,
+                pathIcon: "games/aw",).draw(),
+              GameContainer("Infinite Warfare", Colors.lightGreenAccent,
+                pathIcon: "games/iw",).draw(),
+              GameContainer("World War 2", Colors.brown,
+                pathIcon: "games/ww2",).draw(),
+              GameContainer("Vanguard", Colors.purple,
+                pathIcon: "games/vg",).draw(),
             ],
           ),
         ),

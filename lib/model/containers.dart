@@ -15,16 +15,17 @@ class _RushmoreContainer extends Container{
 
 class GameContainer extends _RushmoreContainer{
   final String gameTitle;
-  final String pathToBackground;
   final Color colorBackground;
-  final List<String> iconFileName =  ['assets/default.png'];
+  final List<String> sourceFilesIdentifier =  ['assets/default.png',
+    'assets/default.png'];
 
-  GameContainer(this.gameTitle, this.pathToBackground,
+  GameContainer(this.gameTitle,
       this.colorBackground, {String? pathIcon}): super(key: GlobalKey())
   {
     if(pathIcon != null)
     {
-      iconFileName[0] = 'assets/$pathIcon.png';
+      sourceFilesIdentifier[0] = 'assets/${pathIcon}_ico.png';
+      sourceFilesIdentifier[1] = 'assets/${pathIcon}_bg.png';
     }
   }
 
@@ -33,12 +34,12 @@ class GameContainer extends _RushmoreContainer{
     return Container(
       width: double.maxFinite,
       height: 110,
-      margin: const EdgeInsets.fromLTRB(5,2,5,2),
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 35),
+      margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 9),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
       decoration: BoxDecoration(
-        image: const DecorationImage(
-          image: AssetImage('assets/default.png'),
-          opacity: 0.16,
+        image: DecorationImage(
+          image: AssetImage(sourceFilesIdentifier[1]),
+          opacity: 0.7,
           fit: BoxFit.fitWidth
         ),
         borderRadius: const BorderRadius.all(Radius.circular(5)),
@@ -55,16 +56,17 @@ class GameContainer extends _RushmoreContainer{
                 Text(
                   gameTitle,
                   style: GoogleFonts.hind(
-                    textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                      fontWeight: FontWeight.bold
+                      textStyle: const TextStyle(
+                        wordSpacing: -3,
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold
                     )
                   )
                 )
               ),
               Image(
-                image: AssetImage(iconFileName[0]),
+                image: AssetImage(sourceFilesIdentifier[0]),
                 fit: BoxFit.fitHeight,
               )
             ]
